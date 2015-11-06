@@ -1,0 +1,22 @@
+<% if member_signed_in? %>
+
+
+
+<p>
+<b>Avatar:</b>
+<%= image_tag @member.avatar.url %>
+</p>
+
+<h3>You have successfully signed in</h3>
+<%= link_to "Sign Out", destroy_member_session_path, :method => :delete  %>
+
+
+<% else %>
+
+<h1> Welcome to rails community</h1>
+
+<%= link_to "Sign In", new_member_session_path, :method => :get %>
+<%= link_to "Sign Up", new_member_registration_path, :method => :create %>
+
+<% end %>
+
